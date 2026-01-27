@@ -6,7 +6,7 @@ module uart_top_module(
   input wire 		      peripheral_clk,		//less than 100Mhz
   
   input wire 		      res,
-  
+
   input wire 		      system_wr_en,
   input wire [7:0]	  input_data,			//total module input
   
