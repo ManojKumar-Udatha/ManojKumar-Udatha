@@ -74,7 +74,6 @@ module tx_module
           tx_data		<=tx_data_frame;
           current_state	<=start_bit;
         end
-        $display("idle state");
       end
         //start bit passing state
       start_bit:begin
@@ -87,8 +86,6 @@ module tx_module
           counter		<=0;
           current_state	<=data_bits;
         end
-        $display("start_bit state");
-        $display("counter=%d clks_per_bit=%d",counter,clks_per_bit);
       end
         //data bits passing state
       data_bits:begin
@@ -106,7 +103,6 @@ module tx_module
             current_state	<=stop_bit;
           end
         end
-        $display("bit index=%d",bit_index);
       end
         //stop bit passing state
       stop_bit:begin
@@ -121,7 +117,6 @@ module tx_module
           counter<=0;
           current_state<=idle;
         end
-        $display("stop_bit state");
       end
         default :current_state<=idle;
     endcase
